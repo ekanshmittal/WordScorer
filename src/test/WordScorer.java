@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class WordScorer {
+	private final static Character START_CHARACTER = 'A';
 	Map<Integer, String> scoreVsWord;
 
 	public WordScorer() {
@@ -57,7 +58,7 @@ public class WordScorer {
 		char[] characterArray = word.toCharArray();
 		int score = 0;
 		for (char character : characterArray) {
-			score += (Character.toUpperCase(character) + 1) - 'A';
+			score += (Character.toUpperCase(character) + 1) - START_CHARACTER;
 		}
 		return score * -1;
 	}
